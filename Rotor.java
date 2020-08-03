@@ -1,14 +1,8 @@
-// Remember, you can't change the interface, nor add import statements
 
 public class Rotor {
-    // decide on your instance variables to represent a rotor
     
-    // The parameter alphaperm below is a permutation of ['a','z']
-    // startpos is the starting position of the rotor
-
-    //make the arguments of the constructor instance variables
     private Character[] alphaperm;
-    //counting variable to keep track of the rotors position
+    
     private int pos;
 
     public Rotor(Character[] alphaperm, char startpos) {
@@ -39,15 +33,7 @@ public class Rotor {
 
         return enc_ch;   // CHANGE THIS, JUST HERE TO COMPILE
     }
-
-    /*
-       decode one character, ch, according to the rotor "wiring"
-       (reverse dir). Decoding is a bit tricky.  First we need to
-       reverse map the incoming character.  Then, we need to "rotate"
-       (in the reverse direction) the decoded character by the
-       position, pos.  To do this, we can't just subtract pos (might
-       become negative), so we add 26, then subtract.
-    */
+    
     public char decode(char ch) {
 
         int index = 0;
@@ -78,12 +64,6 @@ public class Rotor {
         return dec_ch;   // CHANGE THIS, JUST HERE TO COMPILE
     }
 
-    /*
-       advance the roter one position.  Think about what instance
-       variable(s) you need to keep track of this.  This method
-       returns true of the rotor has made a complete turn; otherwise
-       false
-    */
     public boolean advance() {
         // every time this method is called the postion is moved once and if the rotor makes a full rotation it returns a bool of true
         pos++;
