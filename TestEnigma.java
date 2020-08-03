@@ -2,20 +2,8 @@ import java.util.Collections;   // for shuffle
 import java.util.Arrays;        // also for shuffle (need asList)
 import java.util.Random;        // for seeding the random number for shuffle
 
-//  TestEnigma.java will test the different parts of your homework
-//  assignment.
-
 public class TestEnigma {
-    /*
-       The following private helper method will check if a given
-       character "maps" to itself in alphaperm.  It will return -1 if
-       NO self map; otherwise return position of self map.
-
-       NOTE: you may use this function in your Enigma class
-       before/when constructing the reflector (which cannot have a
-       self mapping).  It is used here (in TestEnigma) for testing the
-       construction of the reflector.
-    */
+ 
     private static int check_for_self_mapping(Character[] alphaperm)
     {
 	for (int i = 0; i < alphaperm.length; i++) {
@@ -66,10 +54,9 @@ public class TestEnigma {
 	    l[i] = (char) ('a' + i);
 	}
 
-	// NOTE: reasonable use of the infrequently used do-while loop
 	do {
-	    // NOTE: we can't use the same seed, else possible infinite loop
-	    //       so we increment rseed each time through the loop
+	    // can't use the same seed, else possible infinite loop
+	    //       so increment rseed each time through the loop
 	    Collections.shuffle(Arrays.asList(l), new Random(rseed++));
 	} while (check_for_self_mapping(l) >= 0);
 
