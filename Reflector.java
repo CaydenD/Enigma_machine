@@ -1,12 +1,5 @@
-// Remember, you can't change the interface, nor add import statements
 
 public class Reflector {
-    // decide on your instance variables to represent the reflector
-    // NOTE:  you need to be able to map and reverse-map
-    //        (remember the direction of flow when discussed in class)
-
-    // helper function that checks for self mapping
-    // return -1 if NO self map; otherwise return position of self map
 
     //instance varibales
     private Character[] alphaperm;
@@ -21,8 +14,6 @@ public class Reflector {
         return -1;
     }
 
-    // alphaperm is a permutation (rearrangement) of ['a','z']
-    // NOTE: NO self mappings;  If so, then print error message and return
     public Reflector(Character[] alphaperm) {
 
         //make the argument alphaperm an instance variable
